@@ -1,0 +1,83 @@
+[
+  {
+    "Object": "Kagor Solnechnoj Doliny",
+    "predicate": "using dark grapes",
+    "subject": "Red"
+  },
+  {
+    "Object": "Drama Red Blend",
+    "predicate": "using dark grapes",
+    "subject": "Red"
+  },
+
+  {
+    "Object": "Drama Red Blend",
+    "predicate": "holding not less than 2 years",
+    "subject": "Vintage"
+  },
+  {
+    "Object": "Drama Red Blend",
+    "predicate": "have 0 sugar and 7 12 alcohol",
+    "subject": "Dry"
+  },
+  {
+    "Object": "Domaine du Petit Clocher",
+    "predicate": "using light grapes",
+    "subject": "White"
+  },
+  {
+    "Object": "Domaine du Petit Clocher",
+    "predicate": "holding more than 6 months",
+    "subject": "Mature"
+  },
+  {
+    "Object": "Domaine du Petit Clocher",
+    "predicate": "have 0 sugar and 7 12 alcohol",
+    "subject": "Dry"
+  },
+  {
+    "Object": "Frontera Moscato",
+    "predicate": "using light grapes",
+    "subject": "White"
+  },
+  {
+    "Object": "Frontera Moscato",
+    "predicate": "holding less than 6 months",
+    "subject": "Young"
+  },
+  {
+    "Object": "Frontera Moscato",
+    "predicate": "have 9 12 sugar and 15 16 alcohol",
+    "subject": "Sweet"
+  },
+  {
+    "Object": "Viu Manent Noble Semillon Botrytis Selection",
+    "predicate": "using light grapes",
+    "subject": "White"
+  },
+  {
+    "Object": "Viu Manent Noble Semillon Botrytis Selection",
+    "predicate": "holding more than 3 years",
+    "subject": "Collectible"
+  },
+  {
+    "Object": "Viu Manent Noble Semillon Botrytis Selection",
+    "predicate": "have 9 12 sugar and 15 16 alcohol",
+    "subject": "Sweet"
+  },
+  {
+    "Object": "Cantina Diomede Folia Rosato Negroamaro",
+    "predicate": "using dark grapes without skin",
+    "subject": "Rose"
+  },
+  {
+    "Object": "Cantina Diomede Folia Rosato Negroamaro",
+    "predicate": "holding more than 6 months",
+    "subject": "Mature"
+  },
+  {
+    "Object": "Cantina Diomede Folia Rosato Negroamaro",
+    "predicate": "have 0 sugar and 7 12 alcohol",
+    "subject": "Dry"
+  }
+]

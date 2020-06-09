@@ -1,0 +1,286 @@
+@prefix : <http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/grigo/ontologies/2020/5/Wine> a owl:Ontology .
+
+:Cantina_Diomede_Folia_Rosato_Negroamaro a :Amount_sugar_and_alcohol,
+        :Color,
+        :Holding_period,
+        owl:NamedIndividual ;
+    rdfs:label "Cantina Diomede Folia Rosato Negroamaro" ;
+    :have_0_sugar_and_7_12_alcohol :Dry ;
+    :holding_more_than_6_months :Mature ;
+    :using_dark_grapes_without_skin :Rose .
+
+:Domaine_du_Petit_Clocher a :Amount_sugar_and_alcohol,
+        :Color,
+        :Holding_period,
+        owl:NamedIndividual ;
+    rdfs:label "Domaine du Petit Clocher" ;
+    :have_0_sugar_and_7_12_alcohol :Dry ;
+    :holding_more_than_6_months :Mature ;
+    :using_light_grapes :White .
+
+:Drama_Red_Blend a :Amount_sugar_and_alcohol,
+        :Color,
+        :Holding_period,
+        owl:NamedIndividual ;
+    rdfs:label "Drama Red Blend" ;
+    :have_0_sugar_and_7_12_alcohol :Dry ;
+    :holding_not_less_than_2_years :Vintage ;
+    :using_dark_grapes :Red .
+
+:Frontera_Moscato a :Amount_sugar_and_alcohol,
+        :Color,
+        :Holding_period,
+        owl:NamedIndividual ;
+    rdfs:label "Frontera Moscato" ;
+    :have_9_12_sugar_and_15_16_alcohol :Sweet ;
+    :holding_less_than_6_months :Young ;
+    :using_light_grapes :White .
+
+:Kagor_Solnechnoj_Doliny a :Color,
+        owl:NamedIndividual ;
+    rdfs:label "Kagor Solnechnoj Doliny" ;
+    :using_dark_grapes :Red .
+
+:Viu_Manent_Noble_Semillon_Botrytis_Selection a :Amount_sugar_and_alcohol,
+        :Color,
+        :Holding_period,
+        owl:NamedIndividual ;
+    rdfs:label "Viu Manent Noble Semillon Botrytis Selection" ;
+    :have_9_12_sugar_and_15_16_alcohol :Sweet ;
+    :holding_more_than_3_years :Collectible ;
+    :using_light_grapes :White .
+
+:Dessert a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Fruit ],
+        [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Rose ],
+        [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Sweet ],
+        :Eat .
+
+:Meat a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Grape ],
+        [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Off-dry ],
+        [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Red ],
+        :Eat .
+
+:Seafood a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Dry ],
+        [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :Multi-grade ],
+        [ a owl:Restriction ;
+            owl:onProperty :good_with ;
+            owl:someValuesFrom :White ],
+        :Eat .
+
+:have_0_sugar_and_7_12_alcohol a owl:ObjectProperty ;
+    rdfs:domain :Amount_sugar_and_alcohol ;
+    rdfs:range :Dry .
+
+:have_8_14_sugar_and_17-20_alcohol a owl:ObjectProperty ;
+    rdfs:domain :Amount_sugar_and_alcohol ;
+    rdfs:range :Off-dry .
+
+:have_9_12_sugar_and_15_16_alcohol a owl:ObjectProperty ;
+    rdfs:domain :Amount_sugar_and_alcohol ;
+    rdfs:range :Sweet .
+
+:options a owl:ObjectProperty ;
+    rdfs:domain :Wine ;
+    rdfs:range :Amount_sugar_and_alcohol,
+        :Color,
+        :Holding_period,
+        :Type_of_material .
+
+:produced_in a owl:ObjectProperty ;
+    rdfs:domain :Wine .
+
+:type_food a owl:ObjectProperty ;
+    rdfs:domain :Eat ;
+    rdfs:range :Dessert,
+        :Meat,
+        :Seafood .
+
+:Berry a owl:Class ;
+    rdfs:subClassOf :Type_of_material .
+
+:Raisin a owl:Class ;
+    rdfs:subClassOf :Type_of_material .
+
+:holding_less_than_6_months a owl:ObjectProperty ;
+    rdfs:domain :Holding_period ;
+    rdfs:range :Young .
+
+:holding_more_than_3_years a owl:ObjectProperty ;
+    rdfs:domain :Holding_period ;
+    rdfs:range :Collectible .
+
+:holding_more_than_6_months a owl:ObjectProperty ;
+    rdfs:domain :Holding_period ;
+    rdfs:range :Mature .
+
+:holding_not_less_than_2_years a owl:ObjectProperty ;
+    rdfs:domain :Holding_period ;
+    rdfs:range :Vintage .
+
+:using_berry a owl:ObjectProperty ;
+    rdfs:domain :Type_of_material ;
+    rdfs:range :Berry .
+
+:using_dark_grapes a owl:ObjectProperty ;
+    rdfs:domain :Color ;
+    rdfs:range :Red .
+
+:using_dark_grapes_without_skin a owl:ObjectProperty ;
+    rdfs:domain :Color ;
+    rdfs:range :Rose .
+
+:using_fruit a owl:ObjectProperty ;
+    rdfs:domain :Type_of_material ;
+    rdfs:range :Fruit .
+
+:using_grape a owl:ObjectProperty ;
+    rdfs:domain :Type_of_material ;
+    rdfs:range :Grape .
+
+:using_light_grapes a owl:ObjectProperty ;
+    rdfs:domain :Color ;
+    rdfs:range :White .
+
+:using_multi_grape a owl:ObjectProperty ;
+    rdfs:domain :Type_of_material ;
+    rdfs:range :Multi-grade .
+
+:using_raisin a owl:ObjectProperty ;
+    rdfs:domain :Type_of_material ;
+    rdfs:range :Raisin .
+
+:Fruit a owl:Class ;
+    rdfs:subClassOf :Type_of_material .
+
+:Grape a owl:Class ;
+    rdfs:subClassOf :Type_of_material .
+
+:Multi-grade a owl:Class ;
+    rdfs:subClassOf :Type_of_material .
+
+:Off-dry a owl:Class ;
+    rdfs:subClassOf :Amount_sugar_and_alcohol .
+
+:Collectible a :Collectible,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Collectible" ;
+    rdfs:subClassOf :Holding_period .
+
+:Eat a owl:Class .
+
+:Vintage a :Vintage,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Vintage" ;
+    rdfs:subClassOf :Holding_period .
+
+:Young a :Young,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Young" ;
+    rdfs:subClassOf :Holding_period .
+
+:Mature a :Mature,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Mature" ;
+    rdfs:subClassOf :Holding_period .
+
+:Rose a :Rose,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Rose" ;
+    rdfs:subClassOf :Color .
+
+:Red a :Red,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Red" ;
+    rdfs:subClassOf :Color .
+
+:Sweet a :Sweet,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sweet" ;
+    rdfs:subClassOf :Amount_sugar_and_alcohol .
+
+:Wine a owl:Class .
+
+:Dry a :Dry,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Dry" ;
+    rdfs:subClassOf :Amount_sugar_and_alcohol .
+
+:White a :White,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "White" ;
+    rdfs:subClassOf :Color .
+
+:good_with a owl:ObjectProperty .
+
+:Type_of_material a owl:Class ;
+    rdfs:subClassOf :Wine .
+
+:Amount_sugar_and_alcohol a owl:Class ;
+    rdfs:subClassOf :Wine .
+
+:Color a owl:Class ;
+    rdfs:subClassOf :Wine .
+
+:Holding_period a owl:Class ;
+    rdfs:subClassOf :Wine .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Amount_sugar_and_alcohol :Color :Holding_period :Type_of_material ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Berry :Fruit :Grape :Multi-grade :Raisin ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Collectible :Mature :Vintage :Young ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Dry :Off-dry :Sweet ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Red :Rose :White ) .
+
+[] a owl:AllDisjointProperties ;
+    owl:members ( :have_0_sugar_and_7_12_alcohol :have_8_14_sugar_and_17-20_alcohol :have_9_12_sugar_and_15_16_alcohol :holding_less_than_6_months :holding_more_than_3_years :holding_more_than_6_months :holding_not_less_than_2_years :options :produced_in :type_food :using_berry :using_dark_grapes :using_dark_grapes_without_skin :using_fruit :using_grape :using_light_grapes :using_multi_grape :using_raisin ) .
+
+[] a owl:AllDisjointProperties ;
+    owl:members ( :holding_less_than_6_months :holding_more_than_3_years :holding_more_than_6_months :holding_not_less_than_2_years ) .
+
+[] a owl:AllDisjointProperties ;
+    owl:members ( :using_berry :using_fruit :using_grape :using_multi_grape :using_raisin ) .
+
+[] a owl:AllDisjointProperties ;
+    owl:members ( :using_dark_grapes :using_dark_grapes_without_skin :using_light_grapes ) .
+
