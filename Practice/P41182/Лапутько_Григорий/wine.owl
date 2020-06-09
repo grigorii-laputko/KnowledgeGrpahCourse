@@ -1,0 +1,520 @@
+@prefix : <http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/grigo/ontologies/2020/5/Wine> .
+
+<http://www.semanticweb.org/grigo/ontologies/2020/5/Wine> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#good_with
+:good_with rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#have_0_sugar_and_7_12_alcohol
+:have_0_sugar_and_7_12_alcohol rdf:type owl:ObjectProperty ;
+                               rdfs:domain :Amount_sugar_and_alcohol ;
+                               rdfs:range :Dry .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#have_8_14_sugar_and_17-20_alcohol
+:have_8_14_sugar_and_17-20_alcohol rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :Amount_sugar_and_alcohol ;
+                                   rdfs:range :Off-dry .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#have_9_12_sugar_and_15_16_alcohol
+:have_9_12_sugar_and_15_16_alcohol rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :Amount_sugar_and_alcohol ;
+                                   rdfs:range :Sweet .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#holding_less_than_6_months
+:holding_less_than_6_months rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Holding_period ;
+                            rdfs:range :Young .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#holding_more_than_3_years
+:holding_more_than_3_years rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Holding_period ;
+                           rdfs:range :Collectible .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#holding_more_than_6_months
+:holding_more_than_6_months rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Holding_period ;
+                            rdfs:range :Mature .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#holding_not_less_than_2_years
+:holding_not_less_than_2_years rdf:type owl:ObjectProperty ;
+                               rdfs:domain :Holding_period ;
+                               rdfs:range :Vintage .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#options
+:options rdf:type owl:ObjectProperty ;
+         rdfs:domain :Wine ;
+         rdfs:range :Amount_sugar_and_alcohol ,
+                    :Color ,
+                    :Holding_period ,
+                    :Type_of_material .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#produced_in
+:produced_in rdf:type owl:ObjectProperty ;
+             rdfs:domain :Wine .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#type_food
+:type_food rdf:type owl:ObjectProperty ;
+           rdfs:domain :Eat ;
+           rdfs:range :Dessert ,
+                      :Meat ,
+                      :Seafood .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_berry
+:using_berry rdf:type owl:ObjectProperty ;
+             rdfs:domain :Type_of_material ;
+             rdfs:range :Berry .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_dark_grapes
+:using_dark_grapes rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Color ;
+                   rdfs:range :Red .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_dark_grapes_without_skin
+:using_dark_grapes_without_skin rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Color ;
+                                rdfs:range :Rose .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_fruit
+:using_fruit rdf:type owl:ObjectProperty ;
+             rdfs:domain :Type_of_material ;
+             rdfs:range :Fruit .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_grape
+:using_grape rdf:type owl:ObjectProperty ;
+             rdfs:domain :Type_of_material ;
+             rdfs:range :Grape .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_light_grapes
+:using_light_grapes rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Color ;
+                    rdfs:range :White .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_multi_grape
+:using_multi_grape rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Type_of_material ;
+                   rdfs:range :Multi-grade .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#using_raisin
+:using_raisin rdf:type owl:ObjectProperty ;
+              rdfs:domain :Type_of_material ;
+              rdfs:range :Raisin .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Amount_sugar_and_alcohol
+:Amount_sugar_and_alcohol rdf:type owl:Class ;
+                          rdfs:subClassOf :Wine .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Berry
+:Berry rdf:type owl:Class ;
+       rdfs:subClassOf :Type_of_material .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Collectible
+:Collectible rdf:type owl:Class ;
+             rdfs:subClassOf :Holding_period .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Color
+:Color rdf:type owl:Class ;
+       rdfs:subClassOf :Wine .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Dessert
+:Dessert rdf:type owl:Class ;
+         rdfs:subClassOf :Eat ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :good_with ;
+                           owl:someValuesFrom :Fruit
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :good_with ;
+                           owl:someValuesFrom :Rose
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :good_with ;
+                           owl:someValuesFrom :Sweet
+                         ] .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Dry
+:Dry rdf:type owl:Class ;
+     rdfs:subClassOf :Amount_sugar_and_alcohol .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Eat
+:Eat rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Fruit
+:Fruit rdf:type owl:Class ;
+       rdfs:subClassOf :Type_of_material .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Grape
+:Grape rdf:type owl:Class ;
+       rdfs:subClassOf :Type_of_material .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Holding_period
+:Holding_period rdf:type owl:Class ;
+                rdfs:subClassOf :Wine .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Mature
+:Mature rdf:type owl:Class ;
+        rdfs:subClassOf :Holding_period .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Meat
+:Meat rdf:type owl:Class ;
+      rdfs:subClassOf :Eat ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :good_with ;
+                        owl:someValuesFrom :Grape
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :good_with ;
+                        owl:someValuesFrom :Off-dry
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :good_with ;
+                        owl:someValuesFrom :Red
+                      ] .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Multi-grade
+:Multi-grade rdf:type owl:Class ;
+             rdfs:subClassOf :Type_of_material .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Off-dry
+:Off-dry rdf:type owl:Class ;
+         rdfs:subClassOf :Amount_sugar_and_alcohol .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Raisin
+:Raisin rdf:type owl:Class ;
+        rdfs:subClassOf :Type_of_material .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Red
+:Red rdf:type owl:Class ;
+     rdfs:subClassOf :Color .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Rose
+:Rose rdf:type owl:Class ;
+      rdfs:subClassOf :Color .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Seafood
+:Seafood rdf:type owl:Class ;
+         rdfs:subClassOf :Eat ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :good_with ;
+                           owl:someValuesFrom :Dry
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :good_with ;
+                           owl:someValuesFrom :Multi-grade
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :good_with ;
+                           owl:someValuesFrom :White
+                         ] .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Sweet
+:Sweet rdf:type owl:Class ;
+       rdfs:subClassOf :Amount_sugar_and_alcohol .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Type_of_material
+:Type_of_material rdf:type owl:Class ;
+                  rdfs:subClassOf :Wine .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Vintage
+:Vintage rdf:type owl:Class ;
+         rdfs:subClassOf :Holding_period .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#White
+:White rdf:type owl:Class ;
+       rdfs:subClassOf :Color .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Wine
+:Wine rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Young
+:Young rdf:type owl:Class ;
+       rdfs:subClassOf :Holding_period .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Cantina_Diomede_Folia_Rosato_Negroamaro
+:Cantina_Diomede_Folia_Rosato_Negroamaro rdf:type owl:NamedIndividual ,
+                                                  :Amount_sugar_and_alcohol ,
+                                                  :Color ,
+                                                  :Holding_period ;
+                                         :have_0_sugar_and_7_12_alcohol :Dry ;
+                                         :holding_more_than_6_months :Mature ;
+                                         :using_dark_grapes_without_skin :Rose ;
+                                         rdfs:label "Cantina Diomede Folia Rosato Negroamaro" .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Collectible
+:Collectible rdf:type owl:NamedIndividual ,
+                      :Collectible .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Domaine_du_Petit_Clocher
+:Domaine_du_Petit_Clocher rdf:type owl:NamedIndividual ,
+                                   :Amount_sugar_and_alcohol ,
+                                   :Color ,
+                                   :Holding_period ;
+                          :have_0_sugar_and_7_12_alcohol :Dry ;
+                          :holding_more_than_6_months :Mature ;
+                          :using_light_grapes :White ;
+                          rdfs:label "Domaine du Petit Clocher" .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Drama_Red_Blend
+:Drama_Red_Blend rdf:type owl:NamedIndividual ,
+                          :Color ,
+                          :Holding_period ;
+                 :holding_not_less_than_2_years :Vintage ;
+                 :using_dark_grapes :Red ;
+                 rdfs:label "Drama Red Blend" .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Dry
+:Dry rdf:type owl:NamedIndividual ,
+              :Dry .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Frontera_Moscato
+:Frontera_Moscato rdf:type owl:NamedIndividual ,
+                           :Amount_sugar_and_alcohol ,
+                           :Color ,
+                           :Holding_period ;
+                  :have_9_12_sugar_and_15_16_alcohol :Sweet ;
+                  :holding_less_than_6_months :Young ;
+                  :using_light_grapes :White ;
+                  rdfs:label "Frontera Moscato" .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Mature
+:Mature rdf:type owl:NamedIndividual ,
+                 :Mature .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Red
+:Red rdf:type owl:NamedIndividual ,
+              :Red .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Rose
+:Rose rdf:type owl:NamedIndividual ,
+               :Rose .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Sweet
+:Sweet rdf:type owl:NamedIndividual ,
+                :Sweet .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Vintage
+:Vintage rdf:type owl:NamedIndividual ,
+                  :Vintage .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Viu_Manent_Noble_Semillon_Botrytis_Selection
+:Viu_Manent_Noble_Semillon_Botrytis_Selection rdf:type owl:NamedIndividual ,
+                                                       :Amount_sugar_and_alcohol ,
+                                                       :Color ,
+                                                       :Holding_period ;
+                                              :have_9_12_sugar_and_15_16_alcohol :Sweet ;
+                                              :holding_more_than_3_years :Collectible ;
+                                              :using_light_grapes :White ;
+                                              rdfs:label "Viu Manent Noble Semillon Botrytis Selection" .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#White
+:White rdf:type owl:NamedIndividual ,
+                :White .
+
+
+###  http://www.semanticweb.org/grigo/ontologies/2020/5/Wine#Young
+:Young rdf:type owl:NamedIndividual ,
+                :Young .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Collectible rdfs:label "Collectible" .
+
+
+:Dry rdfs:label "Dry" .
+
+
+:Mature rdfs:label "Mature" .
+
+
+:Red rdfs:label "Red" .
+
+
+:Rose rdfs:label "Rose" .
+
+
+:Sweet rdfs:label "Sweet" .
+
+
+:Vintage rdfs:label "Vintage" .
+
+
+:White rdfs:label "White" .
+
+
+:Young rdfs:label "Young" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Amount_sugar_and_alcohol
+                :Color
+                :Holding_period
+                :Type_of_material
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Berry
+                :Fruit
+                :Grape
+                :Multi-grade
+                :Raisin
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Collectible
+                :Mature
+                :Vintage
+                :Young
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Dry
+                :Off-dry
+                :Sweet
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Red
+                :Rose
+                :White
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( :have_0_sugar_and_7_12_alcohol
+                :have_8_14_sugar_and_17-20_alcohol
+                :have_9_12_sugar_and_15_16_alcohol
+                :holding_less_than_6_months
+                :holding_more_than_3_years
+                :holding_more_than_6_months
+                :holding_not_less_than_2_years
+                :options
+                :produced_in
+                :type_food
+                :using_berry
+                :using_dark_grapes
+                :using_dark_grapes_without_skin
+                :using_fruit
+                :using_grape
+                :using_light_grapes
+                :using_multi_grape
+                :using_raisin
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( :holding_less_than_6_months
+                :holding_more_than_3_years
+                :holding_more_than_6_months
+                :holding_not_less_than_2_years
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( :using_berry
+                :using_fruit
+                :using_grape
+                :using_multi_grape
+                :using_raisin
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( :using_dark_grapes
+                :using_dark_grapes_without_skin
+                :using_light_grapes
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
